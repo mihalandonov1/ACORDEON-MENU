@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acordeon</title>
+
+
+    
+    
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;    
+        }
+
+       .acordeonWrapper{
+            height: auto;
+            width: 800px;
+            background-color: #ecf0f1;
+       }
+
+       .acorderonItem{
+            position: relative;
+            float: left;
+            width: 100%;
+       }
+
+       .acordeonHandel{
+            position: relative;
+            float: left;
+            height: 20px;
+            width: calc(100% - 100px);
+            padding:10px 50px; 
+            background-color: #34495e;
+            border-bottom: 1px solid #fff;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+       }
+
+       .acordeonHandel:hover{
+           background-color: #2c3e50;
+       }
+
+       .acordeonContent{
+           display: none;
+           position: relative;
+           float: left;
+           width: calc(100% - 40px);
+           background-color: #ecf0f1;
+           padding: 20px 20px
+       }
+    </style>
+</head>
+<body>
+    <div class="acordeonWrapper">
+        <div class="acorderonItem" onclick="hideText3()">
+            <div class="acordeonHandel" onclick="showText1()">Mercury</div>
+            <div class="acordeonContent" id="textMercury" onclick="hideOthers1()">
+                Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods.
+            </div>
+        </div>
+        <div class="acorderonItem" onclick="hideText2()">
+            <div class="acordeonHandel" id="venus" onclick="showText2()">Venus</div>
+            <div class="acordeonContent" id="textVenus" onclick="hideOthers2()">
+                Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It does not have any natural satellites.
+            </div>
+        </div>
+        <div class="acorderonItem" onclick="hideText3()">
+            <div class="acordeonHandel" onclick="showText3()">Earth</div>
+            <div class="acordeonContent" id="textEarth" onclick="hideOthers3()">
+                Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var acc = document.querySelector('.acorderonItem > .acordeonHandel');
+        var i;
+
+       var a;
+       var b;
+       var c;
+        
+      
+       
+        function showText1(){
+            if(a == 1){
+                document.getElementById('textMercury').style.display="none";
+                return a=0;
+            } else {
+                document.getElementById('textMercury').style.display="block";
+                return a=1;
+            }
+        }
+
+        function showText2(){
+            if(b == 1){
+                document.getElementById('textVenus').style.display="none";
+                return b=0;
+            } else {
+                document.getElementById('textVenus').style.display="block";
+                return b=1;
+            }
+        }
+
+        function showText3(){
+            if(c == 1){
+                document.getElementById('textEarth').style.display="none";
+                return c=0;
+            } else {
+                document.getElementById('textEarth').style.display="block";
+                return c=1;
+            }
+        }
+
+ 
+    </script>
+</body>
+</html>
